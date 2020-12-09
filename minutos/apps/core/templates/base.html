@@ -4,7 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}{% endblock title %} Minutos</title>
+        <script src="https://unpkg.com/vue@next"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+        
     </head>
     <body>
         <!-- Navbar -->
@@ -12,16 +14,16 @@
             <nav class="navbar">
 
                 <div class="navbar-brand">
-                    <a href="" class="navbar-item" > <strong>Minutos</strong> </a>
+                    <a href="{% url 'core:frontpage' %}" class="navbar-item" > <strong>Minutos</strong> </a>
                 </div>
 
                 <div class="navbar-menu">
                     <div class="navbar-end">
-                        <a href="" class="navbar-item">Plans</a>
+                        <a href="{% url 'core:plans' %}" class="navbar-item">Plans</a>
                     </div>
                     <div class="navbar-item">
                         <div class="buttons">
-                            <a href="" class="button is-success"> <strong>Sign Up</strong> </a>
+                            <a href="{% url 'userprofile:signup' %}" class="button is-success"> <strong>Sign Up</strong> </a>
                             <a href="" class="button"> Log in </a>
                         </div>
                     </div>
@@ -50,8 +52,8 @@
                 <div class="column is-offset-6 is-2">
                     <ul>
                         <li><a href="">Contact</a></li>
-                        <li><a href="">Privacy Policy</a></li>
-                        <li><a href="">Terms of Service</a></li>
+                        <li><a href="{% url 'core:privacy' %}">Privacy Policy</a></li>
+                        <li><a href="{% url 'core:terms' %}">Terms of Service</a></li>
                     </ul>
                 </div>
                 <div class="column is-12 has-text-centered">
@@ -60,5 +62,11 @@
             </div>
         </footer>
         <!-- End Footer -->
+
+        
+        {% block js %}
+            
+        {% endblock js %}
+            
     </body>
 </html>

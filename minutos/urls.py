@@ -18,5 +18,6 @@ from django.urls import path,include
 
 urlpatterns = [
     path('', include('minutos.apps.core.urls')),
+    path('', include('minutos.apps.userprofile.urls')),
     path('admin/', admin.site.urls),
 ]
