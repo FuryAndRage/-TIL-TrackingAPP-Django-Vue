@@ -15,7 +15,7 @@
 
 <div class="columns" id="signup-app">
     <div class="column is-6 is-offset-3">
-        <form action="" method="POST" class="mt-6" v:on:submit="validateForm" >
+        <form action="" method="POST" class="mt-6" v:on:submit="validateForm">
             {% csrf_token %}
             
             {% if form.errors %}
@@ -37,21 +37,21 @@
             <div class="field">
                 <label for="id_username">Email</label>
                 <div class="control">
-                    <input type="email" name="username" id="id_username" class="input">
+                    <input type="email" name="username" id="id_username" class="input" v-model="username">
                 </div>
             </div>
             
             <div class="field">
                 <label for="id_password1">Password</label>
                 <div class="control">
-                    <input type="password" name="password1" id="id_password1" class="input">
+                    <input type="password" name="password1" id="id_password1" class="input" v-model="password1">
                 </div>
             </div> 
             
             <div class="field">
                 <label for="id_password2">Password</label>
                 <div class="control">
-                    <input type="password" name="password2" id="id_password2" class="input">
+                    <input type="password" name="password2" id="id_password2" class="input" v-model="password2">
                 </div>
             </div>
             <ul class="password-helt-text">

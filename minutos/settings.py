@@ -27,6 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#LOGIN_URL = 'userprofile:login'
+#LOGIN_REDIRECT_URL = 'userprofile:myaccount'
+#LOGOUT_URL = 'core:frontpage'
 
 # Application definition
 
