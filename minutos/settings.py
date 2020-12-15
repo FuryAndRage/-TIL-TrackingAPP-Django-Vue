@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'minutos.apps.core',
     'minutos.apps.userprofile',
+    'minutos.apps.team',
 ]
 
 MIDDLEWARE = [

@@ -3,8 +3,12 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout
 from django.contrib.auth.forms import UserCreationForm
-from .models import UserProfile
 from django.contrib.auth.decorators import login_required
+
+from minutos.apps.team.models import Team
+
+from .models import UserProfile
+
 
 
 def signup(request):
@@ -23,7 +27,11 @@ def signup(request):
 
 @login_required
 def my_account(request):
-    return render(request, 'myaccount.html')
+    # teams = request.user.teams.all()
+    print(request.user.userprofile)
+    teams = request.user.teams.exclude(pk=request.user.id)
+    
+    return render(request, 'myaccount.html',{'teams':teams})
 
 @login_required
 def edit_profile(request):
